@@ -1,0 +1,47 @@
+<%= form_with(model: lelang, local: true) do |form| %>
+  <% if lelang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lelang.errors.count, "error") %> prohibited this lelang from being saved:</h2>
+
+      <ul>
+        <% lelang.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :barang_id %>
+    <%= form.number_field :barang_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tanggal_lelang %>
+    <%= form.date_select :tanggal_lelang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :harga_akhir %>
+    <%= form.number_field :harga_akhir %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :petugas_id %>
+    <%= form.number_field :petugas_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

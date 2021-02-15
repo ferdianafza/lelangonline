@@ -1,0 +1,37 @@
+<%= form_with(model: barang, local: true) do |form| %>
+  <% if barang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(barang.errors.count, "error") %> prohibited this barang from being saved:</h2>
+
+      <ul>
+        <% barang.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nama_barang %>
+    <%= form.text_field :nama_barang %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tanggal %>
+    <%= form.date_select :tanggal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :harga_awal %>
+    <%= form.number_field :harga_awal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deskripsi_barang %>
+    <%= form.text_field :deskripsi_barang %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

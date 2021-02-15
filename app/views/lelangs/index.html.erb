@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lelangs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Barang</th>
+      <th>Tanggal lelang</th>
+      <th>Harga akhir</th>
+      <th>User</th>
+      <th>Petugas</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lelangs.each do |lelang| %>
+      <tr>
+        <td><%= lelang.barang_id %></td>
+        <td><%= lelang.tanggal_lelang %></td>
+        <td><%= lelang.harga_akhir %></td>
+        <td><%= lelang.user_id %></td>
+        <td><%= lelang.petugas_id %></td>
+        <td><%= lelang.status %></td>
+        <td><%= link_to 'Show', lelang %></td>
+        <td><%= link_to 'Edit', edit_lelang_path(lelang) %></td>
+        <td><%= link_to 'Destroy', lelang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lelang', new_lelang_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Barang:</strong>
+  <%= @lelang.barang_id %>
+</p>
+
+<p>
+  <strong>Tanggal lelang:</strong>
+  <%= @lelang.tanggal_lelang %>
+</p>
+
+<p>
+  <strong>Harga akhir:</strong>
+  <%= @lelang.harga_akhir %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @lelang.user_id %>
+</p>
+
+<p>
+  <strong>Petugas:</strong>
+  <%= @lelang.petugas_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @lelang.status %>
+</p>
+
+<%= link_to 'Edit', edit_lelang_path(@lelang) %> |
+<%= link_to 'Back', lelangs_path %>

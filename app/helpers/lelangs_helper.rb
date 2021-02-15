@@ -1,0 +1,2 @@
+module LelangsHelper
+end

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Barangs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama barang</th>
+      <th>Tanggal</th>
+      <th>Harga awal</th>
+      <th>Deskripsi barang</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @barangs.each do |barang| %>
+      <tr>
+        <td><%= barang.nama_barang %></td>
+        <td><%= barang.tanggal %></td>
+        <td><%= barang.harga_awal %></td>
+        <td><%= barang.deskripsi_barang %></td>
+        <td><%= link_to 'Show', barang %></td>
+        <td><%= link_to 'Edit', edit_barang_path(barang) %></td>
+        <td><%= link_to 'Destroy', barang, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Barang', new_barang_path %>

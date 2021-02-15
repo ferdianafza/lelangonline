@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nama barang:</strong>
+  <%= @barang.nama_barang %>
+</p>
+
+<p>
+  <strong>Tanggal:</strong>
+  <%= @barang.tanggal %>
+</p>
+
+<p>
+  <strong>Harga awal:</strong>
+  <%= @barang.harga_awal %>
+</p>
+
+<p>
+  <strong>Deskripsi barang:</strong>
+  <%= @barang.deskripsi_barang %>
+</p>
+
+<%= link_to 'Edit', edit_barang_path(@barang) %> |
+<%= link_to 'Back', barangs_path %>
