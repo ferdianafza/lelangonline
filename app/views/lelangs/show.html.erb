@@ -1,4 +1,129 @@
-<p id="notice"><%= notice %></p>
+<div class="app-main__outer">
+                    <div class="app-main__inner">
+                        <div class="app-page-title">
+                            <div class="page-title-wrapper">
+                                <div class="page-title-heading">
+                                    <div class="page-title-icon">
+                                        <i class="pe-7s-car icon-gradient bg-mean-fruit">
+                                        </i>
+                                    </div>
+                                    <div>Lelang Online
+                                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-title-actions">
+                                    <div class="d-inline-block dropdown">
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <span>
+                                                        </span>
+                                                        <div class="ml-auto badge badge-pill badge-secondary"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <i class="nav-link-icon lnr-book"></i>
+                                                        <span>
+                                                        </span>
+                                                        <div class="ml-auto badge badge-pill badge-danger"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <i class="nav-link-icon lnr-picture"></i>
+                                                        <span>
+                                                            Picture
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a disabled href="javascript:void(0);" class="nav-link disabled">
+                                                        <i class="nav-link-icon lnr-file-empty"></i>
+                                                        <span>
+                                                            File Disabled
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>    </div>
+                        </div>
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card" >
+            <img class="card-img-top" src="<%= url_for(@lelang.barang.foto)  %>" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" style="color: red;">Rp <%= @lelang.barang.harga_awal %>,-</h5>
+              <a href="#" class="card-text"><%= @lelang.barang.nama_barang %>.</a>
+              <p class="card-text">
+                <small class="text-muted">
+                  Status Lelang:
+                  <% if @lelang.status == true %>
+                   Tersedia
+                  <% else %>
+                   Tidak Tersedia
+                  <% end %>
+                </small>
+                <br>
+                Penawaran Tertinggi : Ahmad Zaelani
+                Rp 11.650.000,-
+              </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" >
+            <!-- <img class="card-img-top" src="<%= url_for(@lelang.barang.foto)  %>" alt="Card image cap"> -->
+            <div class="card-body">
+              <h5 class="card-title" style="color: red;">Harga awal Rp <%= @lelang.barang.harga_awal %>,-</h5>
+              <p class="card-text">
+                <h4>
+                <%= @lelang.barang.nama_barang %> <br>
+                </h4>
+                Deksripsi: <%= strip_tags(@lelang.barang.deskripsi_barang) %>
+
+              </p>
+              <p class="card-text"><small class="text-muted"></small></p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row" >
+  <div class="col-sm-12">
+        <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title" style="color: red;">Ferdian Afza Hidayat</h5>
+              <p class="card-text" style="background-color: #e4e4e4; border-radius: 13px; ">
+                 Rp 11.600.000,-
+              </p>
+            </div>
+        </div>
+    </div>
+  </div>
+    <br/ >
+<div class="row" >
+    <div class="col-sm-12">
+        <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title" style="color: red;">Ahmad Zaelani</h5>
+              <p class="card-text" style="background-color: #e4e4e4; border-radius: 13px; ">
+                 Rp 11.650.000,-
+              </p>
+            </div>
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+                <br>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Barang:</strong>
@@ -31,4 +156,4 @@
 </p>
 
 <%= link_to 'Edit', edit_lelang_path(@lelang) %> |
-<%= link_to 'Back', lelangs_path %>
+<%= link_to 'Back', lelangs_path %> -->
