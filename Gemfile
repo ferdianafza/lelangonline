@@ -66,3 +66,5 @@ gem 'kaminari'
 gem "chartkick"
 
 gem 'groupdate'
+
+gem 'whenever', require: false

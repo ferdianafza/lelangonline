@@ -1,3 +1,8 @@
+<style>
+  #tawaran {
+    width: 100%;
+  }
+</style>
 <%= form_for @penawaran do |form| %>
   <% if @penawaran.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +17,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.number_field :tawaran, placeholder: "Isi Bid anda", required: true  %>
+    <%= form.number_field :tawaran, placeholder: "Isi Bid anda", required: true, :id => 'tawaran'  %>
 
   <div class="field" hidden="">
     <%= form.label :user_id %>

@@ -12,6 +12,11 @@ module Lelangonline
     config.load_defaults 6.0
     # config.time_zone =  "Asia/Jakarta"
     config.autoload = :classic
+    config.to_prepare do
+      # Configure single controller layout
+      Devise::RegistrationsController.layout "signup"
+      Devise::SessionsController.layout "signup"
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
