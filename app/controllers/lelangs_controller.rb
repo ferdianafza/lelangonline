@@ -4,6 +4,7 @@ class LelangsController < ApplicationController
   def show
     @penawaran = current_user.penawarans.new
     @list_penawaran = Penawaran.where(lelang_id: @lelang.id)
+    @penawaran_tertinggi = Penawaran.where(lelang_id: @lelang.id).order(tawaran: :desc).limit(1)
   end
 
   private

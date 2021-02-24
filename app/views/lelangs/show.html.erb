@@ -1,57 +1,58 @@
 <div class="app-main__outer">
-                    <div class="app-main__inner">
-                        <div class="app-page-title">
-                            <div class="page-title-wrapper">
-                                <div class="page-title-heading">
-                                    <div class="page-title-icon">
-                                        <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                                        </i>
-                                    </div>
-                                    <div>Lelang Online
-                                        <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="page-title-actions">
-                                    <div class="d-inline-block dropdown">
-                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <ul class="nav flex-column">
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        <span>
-                                                        </span>
-                                                        <div class="ml-auto badge badge-pill badge-secondary"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        <i class="nav-link-icon lnr-book"></i>
-                                                        <span>
-                                                        </span>
-                                                        <div class="ml-auto badge badge-pill badge-danger"></div>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
-                                                        <i class="nav-link-icon lnr-picture"></i>
-                                                        <span>
-                                                            Picture
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a disabled href="javascript:void(0);" class="nav-link disabled">
-                                                        <i class="nav-link-icon lnr-file-empty"></i>
-                                                        <span>
-                                                            File Disabled
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>    </div>
-                        </div>
+  <div class="app-main__inner">
+      <div class="app-page-title">
+          <div class="page-title-wrapper">
+              <div class="page-title-heading">
+                  <div class="page-title-icon">
+                      <i class="pe-7s-car icon-gradient bg-mean-fruit">
+                      </i>
+                  </div>
+                  <div>Lelang Online
+                      <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
+                      </div>
+                  </div>
+              </div>
+              <div class="page-title-actions">
+                  <div class="d-inline-block dropdown">
+                      <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                          <ul class="nav flex-column">
+                              <li class="nav-item">
+                                  <a href="javascript:void(0);" class="nav-link">
+                                      <span>
+                                      </span>
+                                      <div class="ml-auto badge badge-pill badge-secondary"></div>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="javascript:void(0);" class="nav-link">
+                                      <i class="nav-link-icon lnr-book"></i>
+                                      <span>
+                                      </span>
+                                      <div class="ml-auto badge badge-pill badge-danger"></div>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="javascript:void(0);" class="nav-link">
+                                      <i class="nav-link-icon lnr-picture"></i>
+                                      <span>
+                                          Picture
+                                      </span>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a disabled href="javascript:void(0);" class="nav-link disabled">
+                                      <i class="nav-link-icon lnr-file-empty"></i>
+                                      <span>
+                                          File Disabled
+                                      </span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+           </div>
+      </div>
 
 
 <div class="row">
@@ -60,7 +61,7 @@
             <img class="card-img-top" src="<%= url_for(@lelang.barang.foto)  %>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title" style="color: red;"><%= number_to_currency(@lelang.barang.harga_awal, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5>
-              <a href="#" class="card-text"><%= @lelang.barang.nama_barang %>.</a>
+              <h4 href="#" class="card-text" ><%= @lelang.barang.nama_barang %>.</h4>
               <p class="card-text">
                 <small class="text-muted">
                   Status Lelang:
@@ -71,13 +72,17 @@
                   <% end %>
                 </small>
                 <br>
-                <p>Penawaran Tertinggi</p>
-                <% Penawaran.order(tawaran: :desc).limit(1).each do |tawaran_tertinggi| %>
-                  <h5><%= tawaran_tertinggi.user.email %>
-                    <br>
+                Tanggal lelang <%= @lelang.tanggal_lelang %>
+                <br>
+                Tanggal akhir lelang <%= @lelang.tanggal_lelang + 1.day %>
+              </p>
+                Penawaran Tertinggi
+                <% @penawaran_tertinggi.each do |tawaran_tertinggi| %>
+                <h5><%= tawaran_tertinggi.user.email %>
+                  </h5>
+                  <h5 style="color: red;">
                   <%= number_to_currency(tawaran_tertinggi.tawaran, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5>
                 <% end %>
-              </p>
             </div>
         </div>
     </div>
