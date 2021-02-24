@@ -101,6 +101,9 @@
 <br>
 
 <%= render partial: '/penawarans/form' %>
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
 <% @list_penawaran.order(created_at: :desc).each do | bid | %>
 <div class="row" >
   <div class="col-sm-12">
