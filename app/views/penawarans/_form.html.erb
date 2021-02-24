@@ -1,0 +1,31 @@
+<%= form_for @penawaran do |form| %>
+  <% if @penawaran.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@penawaran.errors.count, "error") %> prohibited this @penawaran from being saved:</h2>
+
+      <ul>
+        <% @penawaran.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tawaran %>
+    <%= form.number_field :tawaran %>
+  </div>
+
+  <div class="field" hidden="">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field" hidden="">
+    <%= form.text_field :lelang_id, :value => @lelang.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Bid"%>
+  </div>
+<% end %>

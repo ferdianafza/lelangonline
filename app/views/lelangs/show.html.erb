@@ -59,7 +59,7 @@
         <div class="card" >
             <img class="card-img-top" src="<%= url_for(@lelang.barang.foto)  %>" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title" style="color: red;">Rp <%= @lelang.barang.harga_awal %>,-</h5>
+              <h5 class="card-title" style="color: red;"><%= number_to_currency(@lelang.barang.harga_awal, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5>
               <a href="#" class="card-text"><%= @lelang.barang.nama_barang %>.</a>
               <p class="card-text">
                 <small class="text-muted">
@@ -71,8 +71,12 @@
                   <% end %>
                 </small>
                 <br>
-                Penawaran Tertinggi : Ahmad Zaelani
-                Rp 11.650.000,-
+                <p>Penawaran Tertinggi</p>
+                <% Penawaran.order(tawaran: :desc).limit(1).each do |tawaran_tertinggi| %>
+                  <h5><%= tawaran_tertinggi.user.email %>
+                    <br>
+                  <%= number_to_currency(tawaran_tertinggi.tawaran, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5>
+                <% end %>
               </p>
             </div>
         </div>
@@ -81,7 +85,7 @@
         <div class="card" >
             <!-- <img class="card-img-top" src="<%= url_for(@lelang.barang.foto)  %>" alt="Card image cap"> -->
             <div class="card-body">
-              <h5 class="card-title" style="color: red;">Harga awal Rp <%= @lelang.barang.harga_awal %>,-</h5>
+              <!-- <h5 class="card-title" style="color: red;"><%= number_to_currency(@lelang.barang.harga_awal, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5> -->
               <p class="card-text">
                 <h4>
                 <%= @lelang.barang.nama_barang %> <br>
@@ -95,31 +99,26 @@
     </div>
 </div>
 <br>
+
+<%= render partial: '/penawarans/form' %>
+<% @list_penawaran.order(created_at: :desc).each do | bid | %>
 <div class="row" >
   <div class="col-sm-12">
         <div class="card" >
             <div class="card-body">
-              <h5 class="card-title" style="color: red;">Ferdian Afza Hidayat</h5>
-              <p class="card-text" style="background-color: #e4e4e4; border-radius: 13px; ">
-                 Rp 11.600.000,-
-              </p>
+              <h5 class="card-title" style="color: red;"><%= number_to_currency(bid.tawaran, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5>
+              <h6 class="card-text" style="">
+                <%= bid.user.email %>
+              </h6>
+                <%= bid.created_at %>
             </div>
         </div>
     </div>
   </div>
     <br/ >
-<div class="row" >
-    <div class="col-sm-12">
-        <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title" style="color: red;">Ahmad Zaelani</h5>
-              <p class="card-text" style="background-color: #e4e4e4; border-radius: 13px; ">
-                 Rp 11.650.000,-
-              </p>
-            </div>
-        </div>
-    </div>
-</div>
+<% end %>
+
+
                     </div>
                 </div>
                 <br>

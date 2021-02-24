@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tawaran: 1
+  user_id: MyString
+  lelang_id: MyString
+
+two:
+  tawaran: 1
+  user_id: MyString
+  lelang_id: MyString

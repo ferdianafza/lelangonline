@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tawaran:</strong>
+  <%= @penawaran.tawaran %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @penawaran.user_id %>
+</p>
+
+<p>
+  <strong>Lelang:</strong>
+  <%= @penawaran.lelang_id %>
+</p>
+
+<%= link_to 'Edit', edit_penawaran_path(@penawaran) %> |
+<%= link_to 'Back', penawarans_path %>

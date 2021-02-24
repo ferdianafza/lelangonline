@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Penawarans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tawaran</th>
+      <th>User</th>
+      <th>Lelang</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @penawarans.each do |penawaran| %>
+      <tr>
+        <td><%= penawaran.tawaran %></td>
+        <td><%= penawaran.user_id %></td>
+        <td><%= penawaran.lelang_id %></td>
+        <td><%= link_to 'Show', penawaran %></td>
+        <td><%= link_to 'Edit', edit_penawaran_path(penawaran) %></td>
+        <td><%= link_to 'Destroy', penawaran, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Penawaran', new_penawaran_path %>
