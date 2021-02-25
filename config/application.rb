@@ -12,6 +12,7 @@ module Lelangonline
     config.load_defaults 6.0
     config.time_zone =  "Asia/Jakarta"
     config.autoload = :classic
+    config.assets.initialize_on_precompile = false
     config.to_prepare do
       # Configure single controller layout
       Devise::RegistrationsController.layout "signup"
