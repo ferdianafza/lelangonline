@@ -18,7 +18,7 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-set :environment, "development"
+set :environment, "production"
 set :output, "log/cron.log"
 
 # every 1.minute do
@@ -26,5 +26,8 @@ set :output, "log/cron.log"
 # end
 
 every 1.day, at: '11:59 pm' do
+    rake 'sample:test'
+end
+every 1.minute do
     rake 'sample:test'
 end
