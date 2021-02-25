@@ -14,7 +14,7 @@ class PenawaransController < ApplicationController
        end
     elsif @penawaran.tawaran <= @penawaran.lelang.barang.harga_awal
       respond_to do |format|
-        format.html { redirect_to "/lelangs/#{@lelang_id}", notice: 'Bid Harus Lebih Besar Harga Awal.' }
+        format.html { redirect_to "/lelangs/#{@lelang_id}", notice: 'Bid Harus Lebih Besar dari Harga Awal.' }
        end
     elsif Time.now.to_date != @penawaran.lelang.tanggal_lelang
       respond_to do |format|

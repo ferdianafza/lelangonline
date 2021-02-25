@@ -18,13 +18,13 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-# set :environment, "development"
-# set :output, "log/cron.log"
+set :environment, "development"
+set :output, "log/cron.log"
 
 # every 1.minute do
 #   rake 'ryanb:say'
 # end
 
-# every 1.minute do
-#     rake 'sample:test'
-# end
+every 1.day, at: '11:59 pm' do
+    rake 'sample:test'
+end

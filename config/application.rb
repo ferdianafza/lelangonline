@@ -10,7 +10,7 @@ module Lelangonline
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    # config.time_zone =  "Asia/Jakarta"
+    config.time_zone =  "Asia/Jakarta"
     config.autoload = :classic
     config.to_prepare do
       # Configure single controller layout

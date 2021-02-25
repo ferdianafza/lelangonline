@@ -1,3 +1,13 @@
+<style>
+.fa-star {
+    color: yellow;
+}
+
+a:hover {
+    background-color: transparant;
+}
+</style>
+
 <div class="app-main__outer">
                     <div class="app-main__inner">
                         <div class="app-page-title">
@@ -13,16 +23,7 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
                                     </div>
                                 </div>
                                 <div class="page-title-actions">
-                                    <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
-                                        <i class="fa fa-star"></i>
-                                    </button>
                                     <div class="d-inline-block dropdown">
-                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
-                                            <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                <i class="fa fa-business-time fa-w-20"></i>
-                                            </span>
-                                            Buttons
-                                        </button>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <ul class="nav flex-column">
                                                 <li class="nav-item">
@@ -84,7 +85,7 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
                                                             <canvas id="canvas"></canvas>
                                                         </div>
                                                     </div> -->
-                                                    <%= area_chart Lelang.group_by_day_of_week(:created_at).count %>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -204,10 +205,12 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
         <div class="card">
             <img class="card-img-top" src="<%= url_for(lelang.barang.foto)  %>" alt="Card image cap" >
             <div class="card-body">
-            <a href="/lelangs/<%= lelang.id %>" class="" style="list-style-type: none; text-decoration: none; font-size: 18px; color: black;" ><%= lelang.barang.nama_barang %>.</a>
+            <a href="/lelangs/<%= lelang.id %>" id="nama_lelang" style="list-style-type: none; text-decoration: none; font-size: 18px; background-color: none;  " ><%= lelang.barang.nama_barang %>.</a>
               <h5 class="card-title" style="color: red;">
               <%= number_to_currency( lelang.barang.harga_awal, :unit => "IDR ", :separator => ",", :delimiter => ".") %>
           </h5>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
               <p class="card-text"><small class="text-muted"></small></p>
             </div>
         </div>

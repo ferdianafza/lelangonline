@@ -1,11 +1,13 @@
 namespace :sample do
     desc 'saying hi to cron'
     task :test => [ :environment ] do
-    #    lelang = Lelang.find_by(id: 5)
-    # penawaran_tertinggi = Penawaran.where(lelang_id: lelang.id).maximum(:tawaran)
-    # penawar_tertinggi = Penawaran.find_by(lelang_id: 5).user.email
-    # puts "Lelang #{lelang.barang.nama_barang} terlelang di harga #{penawaran_tertinggi} oleh #{penawar_tertinggi}"
-
+       lelang = Lelang.last
+    penawaran_tertinggi = Penawaran.where(lelang_id: lelang.id).maximum(:tawaran)
+    penawar_tertinggi = Penawaran.find_by(lelang_id: lelang.id).user
+    puts "Lelang #{lelang.barang.nama_barang} terlelang di harga #{penawaran_tertinggi} oleh #{penawar_tertinggi.email}"
+     lelang.harga_akhir = Penawaran.where(lelang_id: lelang.id).maximum(:tawaran)
+     lelang.user_id = penawar_tertinggi.id
+     lelang.save!
     # puts "hai"
 
     # b = Barang.new
