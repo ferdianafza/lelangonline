@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lelang:</strong>
+  <%= @pemenang.lelang_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pemenang.user_id %>
+</p>
+
+<p>
+  <strong>Harga:</strong>
+  <%= @pemenang.harga %>
+</p>
+
+<%= link_to 'Edit', edit_pemenang_path(@pemenang) %> |
+<%= link_to 'Back', pemenangs_path %>

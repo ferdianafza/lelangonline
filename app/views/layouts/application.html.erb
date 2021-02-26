@@ -440,7 +440,6 @@
                                     <a href="#" style="list-style-type: none;text-decoration: none;" >
                                         <i class="fas fa-user-circle"></i>
                                         Akun
-                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul
 
@@ -456,17 +455,7 @@
 
                                     >
                                         <li>
-                                            <a href="components-tabs.html">
-                                                <i class="metismenu-icon">
-                                                </i>Tabs
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="" style="list-style-type: none;text-decoration: none;" >
-                                                <i class="fas fa-sign-out-alt"></i>
-                                                </i>Log out
-                                            </a>
-                                             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                                            <%= link_to '<i class="fas fa-sign-out-alt"></i> Do it@'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                                         </li>
                                     </ul>
                                 </li>

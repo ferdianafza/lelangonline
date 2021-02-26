@@ -1,0 +1,32 @@
+<%= form_with(model: hasil_lelelang, local: true) do |form| %>
+  <% if hasil_lelelang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hasil_lelelang.errors.count, "error") %> prohibited this hasil_lelelang from being saved:</h2>
+
+      <ul>
+        <% hasil_lelelang.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lelang_id %>
+    <%= form.text_field :lelang_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :harga %>
+    <%= form.text_field :harga %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

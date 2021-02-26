@@ -1,5 +1,5 @@
 ActiveAdmin.register Barang do
-
+  menu label: "Barang"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -24,6 +24,15 @@ ActiveAdmin.register Barang do
       f.input :deskripsi_barang, as: :quill_editor
     end
     f.actions
+  end
+
+  index do
+    selectable_column
+    id_column
+    column :nama_barang
+    column :tanggal
+    column :harga_awal
+    actions
   end
 
    show do

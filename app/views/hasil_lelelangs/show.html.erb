@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lelang:</strong>
+  <%= @hasil_lelelang.lelang_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hasil_lelelang.user_id %>
+</p>
+
+<p>
+  <strong>Harga:</strong>
+  <%= @hasil_lelelang.harga %>
+</p>
+
+<%= link_to 'Edit', edit_hasil_lelelang_path(@hasil_lelelang) %> |
+<%= link_to 'Back', hasil_lelelangs_path %>
