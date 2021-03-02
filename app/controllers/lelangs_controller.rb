@@ -1,6 +1,19 @@
 class LelangsController < ApplicationController
   before_action :set_lelang, only: %i[ show edit update destroy ]
 
+  def index
+    @lelangs = Lelang.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @lelangs }
+      format.pdf do
+        pdf = LelangsPdf.new(@lelangs)
+        send_data pdf.render,
+            filename: "Laporan Data Lelang.pdf"
+        end
+     end
+  end
+
   def show
     @penawaran = current_user.penawarans.new
     @list_penawaran = Penawaran.where(lelang_id: @lelang.id)

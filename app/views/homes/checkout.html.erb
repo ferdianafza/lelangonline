@@ -1,0 +1,140 @@
+<style>
+.fa-star {
+    color: yellow;
+}
+/*.terlelang {
+  width: 300px;
+  height: 300px;
+  display: grid;
+  place-items: center;
+  color: ;
+  position: relative;
+  font: bold 42px sans-serif;
+  background-image:
+    linear-gradient(black, black),
+    url(https://images.unsplash.com/photo-1494645009625-cc17363a5f20?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=bd502af39c922553e5a13624d4f44f40);
+  background-size: cover;
+  background-blend-mode: saturation;
+}*/
+
+a:hover {
+    background-color: transparant;
+}
+</style>
+<div class="app-main__outer">
+                    <div class="app-main__inner">
+                        <div class="app-page-title">
+                            <div class="page-title-wrapper">
+                                <div class="page-title-heading">
+                                    <div class="page-title-icon">
+                                        <i class="fas fa-gavel" style="color: rgb(2,0,36);
+color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212,255,1) 100%);" ></i>
+                                    </div>
+                                    <div>Lelang Online
+                                        <div class="page-title-subheading">Cari Barang yang kamu inginkan dengan tawaran yang menggiurkan!.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-title-actions">
+                                    <div class="d-inline-block dropdown">
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <i class="nav-link-icon lnr-inbox"></i>
+                                                        <span>
+                                                            Inbox
+                                                        </span>
+                                                        <div class="ml-auto badge badge-pill badge-secondary">86</div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <i class="nav-link-icon lnr-book"></i>
+                                                        <span>
+                                                            Book
+                                                        </span>
+                                                        <div class="ml-auto badge badge-pill badge-danger">5</div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">
+                                                        <i class="nav-link-icon lnr-picture"></i>
+                                                        <span>
+                                                            Picture
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a disabled href="javascript:void(0);" class="nav-link disabled">
+                                                        <i class="nav-link-icon lnr-file-empty"></i>
+                                                        <span>
+                                                            File Disabled
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>    </div>
+                        </div>
+                        <div class="row">
+                            <% Pemenang.where(user_id: current_user.id).each do | menang |%>
+                            <div class="col-md-6 col-xl-12">
+                                <div class="card mb-3 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Lelang <%= menang.lelang.barang.nama_barang %><br>
+                                                    <p>
+                                                    Harga <%=number_to_currency( menang.lelang.harga_akhir, :unit => "IDR ", :separator => ",", :delimiter => ".") %>
+                                                    </p>
+                                                </div>
+                                                <div class="widget-subheading"></div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-success"><%= Lelang.where(status: true).count %></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% end %>
+                            <!-- <div class="col-md-6 col-xl-4">
+                                <div class="card mb-3 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Total Berhasil Terjual</div>
+                                                <div class="widget-subheading"></div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-warning"><%= Lelang.where(status: false).count %></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="col-md-6 col-xl-4">
+                                <div class="card mb-3 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Total Produk</div>
+                                                <div class="widget-subheading"></div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-danger"><%= Barang.all.count %></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+   <br>
+   <div class="alert alert-danger" role="alert">
+      <h6><center>Sudah Terlelang!!!</center></h6>
+   </div>
+<br>
+                    </div>
+                </div>

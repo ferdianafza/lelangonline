@@ -11,6 +11,7 @@ ActiveAdmin.register Pemenang do
 
   filter :user_nama_depan_or_user_nama_belakang_cont, label: 'Cari Berdasarkan Pemenang'
   filter :created_at
+  filter :lelang_barang_nama_barang_cont, label: 'Cari Berdasarkan Nama Barang'
 
 
   index do
@@ -29,6 +30,35 @@ ActiveAdmin.register Pemenang do
     column :harga
     actions
   end
+
+  controller do
+    def index
+      index! do |format|
+        format.html
+        format.csv { send_data @pemenangs.to_csv }
+        format.pdf do
+          pdf = PemenangsPdf.new(@pemenangs)
+          send_data pdf.render,
+              filename: "Laporan Pemenang Lelang.pdf"
+          end
+      end
+    end
+
+    # def show
+    #   show! do |format|
+    #     format.pdf { render(pdf: "page-#{resource.id}.pdf") }
+    #   end
+    # end
+
+  end
+
+  def show
+    attributes_table do
+      row :lelang_id
+      row :user_id
+    end
+  end
+
   #
   # or
   #

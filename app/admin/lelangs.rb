@@ -36,6 +36,21 @@ ActiveAdmin.register Lelang do
     f.actions
   end
 
+  controller do
+    def index
+      index! do |format|
+        format.html
+        format.csv { send_data @lelangs.to_csv }
+        format.pdf do
+          pdf = LelangsPdf.new(@lelangs)
+          send_data pdf.render,
+              filename: "Laporan Lelang.pdf"
+          end
+      end
+    end
+  end
+
+
   index do
     selectable_column
     id_column

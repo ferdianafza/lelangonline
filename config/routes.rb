@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
   resources :homes
   root to: 'homes#index'
+  get '/checkout' => 'homes#checkout'
 end

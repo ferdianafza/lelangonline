@@ -78,3 +78,13 @@ gem 'whenever', require: false
 gem "aws-sdk-s3", require: false
 
 gem 'cancan'
+
+gem 'wicked_pdf'
+
+# gem 'wkhtmltopdf-binary'
+
+gem 'prawn'
+
+gem 'prawn_rails'
+
+gem 'prawn-table'

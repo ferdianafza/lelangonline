@@ -1,5 +1,5 @@
 namespace :sample do
-    desc 'saying hi to cron'
+    desc 'Create Update winner Lelang'
     task :test => [ :environment ] do
        lelang = Lelang.last
     penawaran_tertinggi = Penawaran.where(lelang_id: lelang.id).maximum(:tawaran)

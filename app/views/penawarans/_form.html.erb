@@ -2,6 +2,27 @@
   #tawaran {
     width: 100%;
   }
+  #bid {
+    width: 80%;
+    background: green;
+     border: 1px solid #e8e8e8;
+     display: block;
+      &:hover {
+      background: #0089d1;
+    }
+     input[type='submit'] {
+      color: #006faa;
+      font-weight: 400;
+      font-size: 1.4em; //font size does not change
+      display: block;
+      padding: 0px 4px 0px 4px; //modification doesn't show..
+      text-decoration: none;
+      &:hover {
+      color: rgb(229, 246, 255);
+      }
+    }
+
+  }
 </style>
 <%= form_for @penawaran do |form| %>
   <% if @penawaran.errors.any? %>
@@ -29,7 +50,9 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Bid", :class => "kirim btn btn-primary"%>
+    <center>
+    <%= form.submit "Bid", :id => "bid", class: "kirim btn btn-primary"%>
+    </center>
   </div>
   </div>
 <% end %>
