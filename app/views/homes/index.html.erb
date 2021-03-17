@@ -78,7 +78,7 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
                                     </div>
                                 </div>    </div>
                         </div>
-                        <div class="row">
+                        <!-- div class="row">
                             <div class="col-md-12 col-lg-6">
                                 <div class="mb-3 card">
                                     <div class="card-header-tab card-header-tab-animation card-header">
@@ -86,58 +86,31 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
                                             <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
                                             Lelang Harian
                                         </div>
-                                        <ul class="nav">
-                                        </ul>
                                     </div>
-                                    <div class="card-body">
-                                        <div class="tab-content">
-                                            <div class="tab-pane fade show active" id="tabs-eg-77">
-                                                <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
-                                                    <!-- <div class="widget-chat-wrapper-outer">
-                                                        <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                                            <canvas id="canvas"></canvas>
-                                                        </div>
-                                                    </div> -->
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="row">
+    <a href="/lelangs/<%= @lelang_terakhir.id %>">
+    <div class="col-sm-4">
+        <div class="card">
+            <img class="card-img-top" src="<%= url_for(@lelang_terakhir.barang.foto)  %>" alt="Card image cap" >
+            <div class="card-body">
+            <a href="/lelangs/<%= @lelang_terakhir.id %>" id="nama_lelang" style="list-style-type: none; text-decoration: none; font-size: 18px; background-color: none;  " ><%= @lelang_terakhir.barang.nama_barang %>.</a>
+              <h5 class="card-title" style="color: red;">
+              <%= number_to_currency( @lelang_terakhir.barang.harga_awal, :unit => "IDR ", :separator => ",", :delimiter => ".") %>
+          </h5>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <p class="card-text"><small class="text-muted"></small></p>
+            </div>
+        </div>
+    </div>
+</a>
+</div>
+
+
                                 </div>
                             </div>
-                            <div class="col-md-12 col-lg-6">
-                                <div class="mb-3 card">
-                                    <div class="card-header-tab card-header">
-                                        <div class="card-header-title">
-                                            <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
-                                            Bandwidth Reports
-                                        </div>
-                                        <div class="btn-actions-pane-right">
-                                            <div class="nav">
-                                                <a href="javascript:void(0);" class="border-0 btn-pill btn-wide btn-transition active btn btn-outline-alternate">Tab 1</a>
-                                                <a href="javascript:void(0);" class="ml-1 btn-pill btn-wide border-0 btn-transition  btn btn-outline-alternate second-tab-toggle-alt">Tab 2</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade active show" id="tab-eg-55">
-                                            <div class="widget-chart p-3">
-                                                <div style="height: 350px">
-                                                    <canvas id="line-chart"></canvas>
-                                                </div>
-                                               <!--  <div class="widget-chart-content text-center mt-5">
-                                                    <div class="widget-description mt-0 text-warning">
-                                                        <i class="fa fa-arrow-left"></i>
-                                                        <span class="pl-1">175.5%</span>
-                                                        <span class="text-muted opacity-8 pl-1">increased server resources</span>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-md-6 col-xl-4">
                                 <div class="card mb-3 widget-content">
