@@ -5,7 +5,7 @@ ActiveAdmin.register Barang do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :nama_barang, :tanggal, :harga_awal, :deskripsi_barang, :foto
+  permit_params :nama_barang, :harga_awal, :deskripsi_barang, :foto
   #
   # or
   #
@@ -19,7 +19,6 @@ ActiveAdmin.register Barang do
     f.inputs 'Barang' do
       f.input :foto, as: :file
       f.input :nama_barang
-      f.input :tanggal
       f.input :harga_awal
       f.input :deskripsi_barang, as: :quill_editor
     end
@@ -30,7 +29,6 @@ ActiveAdmin.register Barang do
     selectable_column
     id_column
     column :nama_barang
-    column :tanggal
     column :harga_awal
     actions
   end
@@ -45,7 +43,6 @@ ActiveAdmin.register Barang do
         image_tag ad.foto, width: "50%"
       end
       row :nama_barang
-      row :tanggal
       row :harga_awal
       row (:deskripsi_barang) { |barang| raw(barang.deskripsi_barang) }
     end

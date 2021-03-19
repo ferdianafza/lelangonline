@@ -198,8 +198,7 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
               Harga Awal <%= number_to_currency( lelang.barang.harga_awal, :unit => "IDR ", :separator => ",", :delimiter => ".") %>
               Harga Akhir
               <%= number_to_currency( lelang.harga_akhir, :unit => "IDR ", :separator => ",", :delimiter => ".") %>
-              Pemenang
-              <%= User.find_by(id: lelang.user_id).email %>
+              <!-- <%= User.find_by(id: lelang.user_id) %> -->
               </h6>
               <p class="card-text"><small class="text-muted"></small></p>
             </div>

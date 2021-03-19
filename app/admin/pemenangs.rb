@@ -13,6 +13,17 @@ ActiveAdmin.register Pemenang do
   filter :created_at
   filter :lelang_barang_nama_barang_cont, label: 'Cari Berdasarkan Nama Barang'
 
+  form do |f|
+    f.inputs do
+      f.input :lelang_id, :label => 'Lelang', :as => :select, :collection => Lelang.all.map{|u| ["#{u.barang.nama_barang}", u.id]}
+      f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.email}", u.id]}
+      # f.input :user_id, :label => 'User', :as => :select, :collection => User.all.map{|u| ["#{u.email}", u.id]}
+      f.input :harga
+      # f.input :harga_akhir
+    end
+    f.actions
+  end
+
 
   index do
     selectable_column

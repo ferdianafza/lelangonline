@@ -85,7 +85,7 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
               <div class="alert alert-primary" >
                 Penawaran Tertinggi
                 <% @penawaran_tertinggi.each do |tawaran_tertinggi| %>
-                <%= tawaran_tertinggi.user.email %>
+                <%= tawaran_tertinggi.user.email.gsub(/.(?=.{12})/, "*") %>
 
                   <h5 >
                     <%= tawaran_tertinggi.user.nama_depan %> <%= tawaran_tertinggi.user.nama_belakang %>
@@ -130,7 +130,7 @@ color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 37%, rgba(0,212
             <div class="card-body">
               <h5 class="card-title" style="color: red;"><%= number_to_currency(bid.tawaran, :unit => "IDR ", :separator => ",", :delimiter => ".") %></h5>
               <h6 class="card-text" style="">
-                <%= bid.user.email %>
+                <%= bid.user.email.gsub(/.(?=.{12})/, "*") %>
               </h6>
                 <%= bid.created_at %>
             </div>

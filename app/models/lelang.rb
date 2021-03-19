@@ -16,4 +16,9 @@ class Lelang < ApplicationRecord
   #   end
   # end
 
+  def replace_in_string(str, replace, start, finish)
+    str[start..finish] = replace * (finish + 1 - start)
+    str
+  end
+
 end
