@@ -96,7 +96,7 @@ ActiveAdmin.setup do |config|
   # (within the application controller) to return the currently logged in user.
   config.current_user_method = :current_admin_user
 
-  config.download_links = %i[csv pdf]
+  config.download_links = %i[pdf]
 
   # == Logging Out
   #
