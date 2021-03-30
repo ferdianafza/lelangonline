@@ -15,10 +15,11 @@ Lelang Online Tugas UJIKOM
 
 * tatacara instalasi ruby dan rails bisa akses tautan berikut https://gorails.com/setup/ubuntu/18.04
 
-* setelah pull repository
+* setelah clone repository
 * Bundle
 * jalankan rails db:create
 * jalankan rails db:migrate
 * jalankan rails c lalu paste code berikut AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-* rails c dan jalankan forema s
+* rails c dan jalankan foreman s
 akses http://localhost:5000/
+* untuk web yang sudah di hosting https://lelangonline.herokuapp.com/
