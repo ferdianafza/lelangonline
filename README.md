@@ -1,36 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Lelang Online Tugas UJIKOM
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-yang diperlukan
-ruby versi 2.7 ke atas
-rails versi 6.0.0 ke atas
-Development mode Database pakai Sqlite
+* yang diperlukan
+* ruby versi 2.7 ke atas
+* rails versi 6.0.0 ke atas
+* Development mode Database pakai Sqlite
                  ActiveStorage pakai localstorage
-                 Cronjob
-Production mode  Database pakai Postgresql
+                 Job Cronjob
+* Production mode  Database pakai Postgresql
                  ActiveStorage pakai Amazon We Service S3
-                 Heroku Scheduler
+                 Job Heroku Scheduler
 
 
-tatacara instalasi ruby dan rails bisa akses tautan berikut https://gorails.com/setup/ubuntu/18.04
+* tatacara instalasi ruby dan rails bisa akses tautan berikut https://gorails.com/setup/ubuntu/18.04
+
+* setelah pull repository
+* Bundle
+* jalankan rails db:create
+* jalankan rails db:migrate
+* jalankan rails c lalu paste code berikut AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+* rails c dan jalankan forema s
+akses http://localhost:5000/
