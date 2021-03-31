@@ -1,8 +1,8 @@
 class Lelang < ApplicationRecord
   paginates_per 8
   belongs_to :barang
-  has_one :pemenang
-  has_many :penawarans
+  has_one :pemenang , dependent: :destroy
+  has_many :penawarans, dependent: :destroy
 
   # include CanCan::Ability
 

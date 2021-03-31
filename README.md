@@ -23,3 +23,11 @@ Lelang Online Tugas UJIKOM
 * rails c dan jalankan foreman s
 akses http://localhost:5000/
 * untuk web yang sudah di hosting https://lelangonline.herokuapp.com/
+* login user https://lelangonline.herokuapp.com/users/sign_in
+        farisafza201002@gmail.com
+        123123
+* Login Admin/Petugas https://lelangonline.herokuapp.com/admin
+        petugas email petugas@example.com
+                pass  password
+        admin   email admin@example.com
+                pass  password
