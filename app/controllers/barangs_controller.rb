@@ -4,6 +4,15 @@ class BarangsController < ApplicationController
   # GET /barangs or /barangs.json
   def index
     @barangs = Barang.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @pemenangs }
+      format.pdf do
+        pdf = BarangsPdf.new(@barangs)
+        send_data pdf.render,
+            filename: "Laporan Barang.pdf"
+        end
+     end
   end
 
   # GET /barangs/1 or /barangs/1.json

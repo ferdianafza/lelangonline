@@ -33,6 +33,29 @@ ActiveAdmin.register Barang do
     actions
   end
 
+
+
+  controller do
+    def index
+      index! do |format|
+        format.html
+        format.csv { send_data @barangs.to_csv }
+        format.pdf do
+          pdf = BarangsPdf.new(@barangs)
+          send_data pdf.render,
+              filename: "Laporan Barang.pdf"
+          end
+      end
+    end
+
+    # def show
+    #   show! do |format|
+    #     format.pdf { render(pdf: "page-#{resource.id}.pdf") }
+    #   end
+    # end
+
+  end
+
    show do
    attributes_table do
       # row :files do |av|
