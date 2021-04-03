@@ -1,0 +1,22 @@
+User
+
+id    Nama Depan     Nama Belakang         email              password
+1     Ferdian Afza    Hidayat      farisafza201002@gmail.com   123123
+2     Yana            Saputra       yanaSaputra@gmail.com      123123
+
+Barang
+id     Nama Barang        Harga Awal
+8      Hard Wallet SFP     750000
+7      PS 5                14500000
+6      IP 12 PRO MAX       27000000
+
+Admin
+id      email             password   role
+1     admin@example.com   password   admin
+2     petugas@example.com password   petugas
+
+
+
+
+BNIB (Brand New in Box)
+size 40

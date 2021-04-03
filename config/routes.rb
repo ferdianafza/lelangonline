@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'layanan/index'
   resources :pemenangs
   resources :hasil_lelelangs
   resources :penawarans
