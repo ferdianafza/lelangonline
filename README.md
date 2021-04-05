@@ -11,6 +11,9 @@ Lelang Online Tugas UJIKOM
 * Production mode  Database pakai Postgresql
                  ActiveStorage pakai Amazon We Service S3
                  Job Heroku Scheduler
+* Fitur user : register login logout bid barang
+* Fitur admin : register login logout Crud Barang generate laporan
+* Fitur petugas : login logout Crud Barang Buka/Tutup Lelang generate laporan
 
 
 * tatacara instalasi ruby dan rails bisa akses tautan berikut https://gorails.com/setup/ubuntu/18.04
