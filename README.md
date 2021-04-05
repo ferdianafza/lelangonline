@@ -19,10 +19,11 @@ Lelang Online Tugas UJIKOM
 * Bundle
 * jalankan rails db:create
 * jalankan rails db:migrate
-* jalankan rails c lalu paste code berikut AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+* jalankan rails c lalu paste code berikut AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development? AdminUser.create!(email: 'petugas@example.com', password: 'password', password_confirmation: 'password', role: 'petugas') if Rails.env.development?
 * rails c dan jalankan foreman s
 akses http://localhost:5000/
 * untuk web yang sudah di hosting https://lelangonline.herokuapp.com/
+* sub domain http://www.lelangonline.site/
 * login user https://lelangonline.herokuapp.com/users/sign_in
         farisafza201002@gmail.com
         123123
