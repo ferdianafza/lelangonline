@@ -21,6 +21,13 @@
       data-auto-a11y="true"
     ></script>
     <style>
+        .keluar {
+            list-style-type: none;
+            text-decoration: none;
+        }
+        .greating:hover {
+            background-color: transparent;
+        }
     </style>
   </head>
 
@@ -60,7 +67,7 @@
                     </div> -->
                     <ul class="header-menu nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" style="list-style-type: none; text-decoration: none;">
+                            <a href="#" class="nav-link greating" style="list-style-type: none; text-decoration: none;">
                                 Hallo, <%= current_user.nama_depan %>
                             </a>
                         </li>
@@ -425,7 +432,7 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <%= link_to '<i class="fas fa-sign-out-alt"></i> Log out'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                                            <%= link_to '<i class="fas fa-sign-out-alt"></i> Log out'.html_safe, destroy_user_session_path, method: :delete, :class => 'navbar-link keluar '  %>
                                         </li>
                                     </ul>
                                 </li>
