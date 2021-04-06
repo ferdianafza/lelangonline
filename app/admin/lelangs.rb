@@ -59,7 +59,7 @@ ActiveAdmin.register Lelang do
       barang
     end
     column :status
-    column :user_id
+    # column :user_id
     actions
   end
 

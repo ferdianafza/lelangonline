@@ -2,6 +2,7 @@
 
 Lelang Online Tugas UJIKOM
 
+# Instruction
 * yang diperlukan
 * ruby versi 2.7 ke atas
 * rails versi 6.0.0 ke atas
