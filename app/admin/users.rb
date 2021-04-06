@@ -15,4 +15,15 @@ ActiveAdmin.register User do
   #   permitted
   # end
 
+   index do
+    selectable_column
+    id_column
+    column :email
+    column :nama_depan
+    column :nama_belakang
+    column :alamat
+    actions
+  end
+
+
 end
