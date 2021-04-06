@@ -10,7 +10,7 @@ Lelang Online Tugas UJIKOM
                  ActiveStorage pakai localstorage
                  Job Cronjob
 * Production mode  Database pakai Postgresql
-                 ActiveStorage pakai Amazon We Service S3
+                 ActiveStorage pakai Amazon Web Service S3
                  Job Heroku Scheduler
 * Fitur user : register login logout bid barang
 * Fitur admin : register login logout Crud Barang generate laporan
